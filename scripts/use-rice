@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+PROFILE="$1"
+DOTFILES="$HOME/dotfiles/profiles/$PROFILE/.config"
+
+if [ -z "$PROFILE" ]; then
+    echo "Usage: use-profile <profile>"
+    exit 1
+fi
+
+if [ ! -d "$DOTFILES" ]; then
+    echo "Profile '$PROFILE' does not exist."
+    exit 1
+fi
+
+echo "Switching to profile: $PROFILE"
+
+for dir in "$DOTFILES"/*; do
+    name=$(basename "$dir")
+    rm -rf "$HOME/.config/$name"
+    ln -s "$dir" "$HOME/.config/$name"
+done
+
+echo "Profile '$PROFILE' applied."

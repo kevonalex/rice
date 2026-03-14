@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+PROFILE="default"
+REPO="$HOME/dotfiles/profiles/$PROFILE/.config"
+
+for dir in "$REPO"/*; do
+    name=$(basename "$dir")
+    rm -rf "$HOME/.config/$name"
+    ln -s "$dir" "$HOME/.config/$name"
+done
+
+echo "Profile '$PROFILE' installed."
