@@ -1,0 +1,16 @@
+*{
+	font-family: "Orbitron", "JetBrainsMono Nerd Font";
+	font-size: 12px;
+}
+window#waybar {
+	background: #000000;
+	color: #e6e6e6;
+}
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+	padding: 0 10px;
+}

@@ -1,0 +1,9 @@
+window {
+	background-color: #0a0a0a;
+	color: #e6e6e6;
+	border: 2px solid #ff2222;
+	font-family: "Orbitron";
+}
+# entry.selected {
+	background-color: #cc0000;
+}
